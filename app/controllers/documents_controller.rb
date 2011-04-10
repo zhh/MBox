@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.xml
   def index
-    @documents = Document.paginate :page => params[:page]
+    @documents = Document.paginate :page => params[:page], :order => 'updated_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

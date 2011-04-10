@@ -11,38 +11,44 @@
       <table class="table">
         <tr>             
           <th class="first">ID</th>
-                    <th>
+          <th>
             <%= t("activerecord.attributes.document.title", :default => t("activerecord.labels.title", :default => "Title")) %>
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @documents.each do |document| -%>
-        <tr class="<%= cycle("odd", "even") %>">
-          <td>
-            <%= document.id %>
-          </td>
-                    <td>
-            <%= link_to document.title, document_path(document) %>
-          </td>
-                    <td>
-            <%= document.created_at %>
-          </td>
-          <td class="last">
-            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", document_path(document) %> |
-            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_document_path(document) %> |
-            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", document_path(document), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-          </td>
-        </tr>          
+          <tr class="<%= cycle("odd", "even") %>">
+            <td>
+              <%= document.id %>
+            </td>
+            <td>
+              <%= link_to document.title, document_path(document) %>
+            </td>
+            <td>
+              <%= document.created_at %>
+            </td>
+            <td class="last">
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", document_path(document) %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_document_path(document) %> |
+              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", document_path(document), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            </td>
+          </tr>
         <% end -%>
       </table>
+
       <div class="actions-bar wat-cf">
-        <div class="actions">
+
+
+        <div class="digg_pagination">
+          <div class="page_info">
+            <%= page_entries_info @documents %>
+
+            <%= will_paginate @documents %>
+          </div>
         </div>
-        
-        <%= will_paginate @documents  %>
-        
       </div>
+
     </div>
   </div>
 </div>
