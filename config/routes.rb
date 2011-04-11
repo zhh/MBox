@@ -1,4 +1,6 @@
 MBox::Application.routes.draw do
+  resources :document_types
+
   resources :companies
 
   resources :chances

@@ -10,20 +10,20 @@
     <div class="inner">
       <table class="table">
         <tr>             
-          <th class="first">ID</th>
           <th>
             <%= t("activerecord.attributes.document.title", :default => t("activerecord.labels.title", :default => "Title")) %>
           </th>
+          <th><%= t("web-app-theme.document_type", :default => "Document Type")  %></th>
           <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @documents.each do |document| -%>
-          <tr class="<%= cycle("odd", "even") %>">
-            <td>
-              <%= document.id %>
-            </td>
+          <tr class="<%= cycle("odd", "even") %>">            
             <td>
               <%= link_to document.title, document_path(document) %>
+            </td>
+            <td>
+              <%= link_to document.document_type.name, document_path(document) %>
             </td>
             <td>
               <%= document.created_at %>

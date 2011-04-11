@@ -25,6 +25,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new.xml
   def new
     @document = Document.new
+    @document_types = DocumentType.to_array
 
     respond_to do |format|
       format.html # new.html.erb

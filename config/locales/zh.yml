@@ -1,12 +1,18 @@
 zh:
   documents: 文档
+  activerecord:
+    attributes:
+      document:
+        title: 名称
 
   web-app-theme:
     documents: 文档
+    title: 名称
+    document_type: 文档类型
     chances: 商机
     save: 保存
     cancel: 取消
-    list: List
+    list: 目录
     edit: 编辑
     new: 新建
     show: Show

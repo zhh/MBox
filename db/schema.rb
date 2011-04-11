@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110409015307) do
+ActiveRecord::Schema.define(:version => 20110411134122) do
 
   create_table "chances", :force => true do |t|
     t.string   "title"
@@ -26,9 +26,17 @@ ActiveRecord::Schema.define(:version => 20110409015307) do
     t.datetime "updated_at"
   end
 
+  create_table "document_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "document_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

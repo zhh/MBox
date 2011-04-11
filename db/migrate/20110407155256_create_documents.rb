@@ -3,6 +3,7 @@ class CreateDocuments < ActiveRecord::Migration
     create_table :documents do |t|
       t.string :title
       t.text :description
+      t.references :document_type
 
       t.timestamps
     end
