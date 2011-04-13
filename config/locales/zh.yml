@@ -1,30 +1,24 @@
 zh:
-  documents: 文档
-  activerecord:
-    attributes:
-      document:
-        title: 名称
+  list: 目录
+  new: 新建
+  show: 显示
+  edit: 编辑
+  delete: 删除
+  confirm: 你确定？
+  can_not_deleted_for_data: 有下级数据，不能删除！请先删除下级数据！
 
-  web-app-theme:
-    documents: 文档
-    title: 名称
-    document_type: 文档类型
-    chances: 商机
-    save: 保存
-    cancel: 取消
-    list: 目录
-    edit: 编辑
-    new: 新建
-    show: Show
-    delete: 删除
-    confirm: 你确定吗？
-    created_at: 创建时间
-    all: 所有
-    logout: 退出
-    
-  will_paginate:
-    pagination_options:
-      previous: '下一页'
+  save: 保存
+  cancel: 取消
+  or: 或
+
+  created_at: 创建时间
+
+  documenttype: 文档类型  
+  document_type:
+    name: 类型
+    description: 描述
+    quantity: 文档数
+
 
   errors:
     messages:

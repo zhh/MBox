@@ -1,26 +1,26 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", document_types_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_document_type_path %></li>
-      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", document_type_path %></li>
+      <li class="first"><%= link_to "#{t("list", :default => "List")}", document_types_path  %></li>
+      <li><%= link_to "#{t("new", :default => "New")}", new_document_type_path %></li>
+      <li class="active"><%= link_to "#{t("show", :default => "Show")}", document_type_path %></li>
     </ul>
   </div>          
   <div class="content">
     <div class="inner">
       
         <p>
-          <b><%= t("activerecord.attributes.document_type.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <b><%= t("document_type.name", :default => "Name") %>:</b>
           <%= @document_type.name %>
         </p>
 
         <p>
-          <b><%= t("activerecord.attributes.document_type.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
+          <b><%= t("document_type.description", :default => "Description") %>:</b>
           <%= @document_type.description %>
         </p>
       <div class="wat-cf">
-        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_document_type_path(@document_type), :class => "button" %> 
-        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), document_type_path(@document_type), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("edit", :default=> "Edit")}") + " " + t("edit", :default=> "Edit"), edit_document_type_path(@document_type), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("delete", :default=> "Delete")}") + " " + t("delete", :default => "Delete"), document_type_path(@document_type), :method => "delete", :class => "button", :confirm => "#{t("confirm", :default => "Are you sure?")}" %>
       </div>      
     </div>
   </div>

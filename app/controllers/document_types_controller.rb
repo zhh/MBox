@@ -73,9 +73,21 @@ class DocumentTypesController < ApplicationController
   # DELETE /document_types/1.xml
   def destroy
     @document_type = DocumentType.find(params[:id])
-    @document_type.destroy
+    
+    if @document_type
+      begin
+        @document_type.destroy
+        #flash[:notice] = "下面还有文档，不能删除" #_("area") + " #{area.name} " + _("Destroy Success")
+        flash[:notice] = 'Document type was successfully deleted.'
 
-    respond_to do |format|
+        logger.info("#{Time.now}[DocumentTypeID= #{@document_type.id}]#{flash[:notice]}")
+        
+      rescue Exception => e
+        flash[:error] = t(e.message)
+      end      
+    end
+
+    respond_to do |format|      
       format.html { redirect_to(document_types_url) }
       format.xml  { head :ok }
     end
