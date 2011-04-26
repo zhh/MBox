@@ -25,11 +25,14 @@ class DocumentsController < ApplicationController
   # GET /documents/new.xml
   def new
     @document = Document.new
-    @document_types = DocumentType.to_array
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @document }
+    if DocumentType.all.empty?
+      flash[:notice] = "请先建立文件类型"
+      redirect_to :controller => "document_types", :action => "new"
+    else
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @document }
+      end
     end
   end
 

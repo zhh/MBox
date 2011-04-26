@@ -8,9 +8,11 @@ class DocumentType < ActiveRecord::Base
   def self.to_array
     pas = DocumentType.all
     document_types = []
+    
     pas.each do |pa|
       document_types << [pa.name, pa.id]
     end
+    
     document_types
   end
 

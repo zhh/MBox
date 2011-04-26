@@ -6,8 +6,7 @@
 </div>
 
 <div class="group">
-  <%= f.select :document_type_id, @document_types%>
-  <%#= f.select :document_type_id, @document_types %>  
+  <%= f.select :document_type_id, DocumentType.to_array, :prompt => "please select" %>
 </div>
 
 <div class="group">
