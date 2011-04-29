@@ -1,5 +1,19 @@
 zh:
-        
+  activerecord:
+    errors:
+      messages:
+        taken: "has already been taken"
+        record_invalid: "Validation failed: %{errors}"
+
+  activerecord:
+    errors:
+      models:
+        document_type:
+          attributes:
+            name:
+                blank: "不能为空！"
+
+
   list: 目录
   new: 新建
   show: 显示

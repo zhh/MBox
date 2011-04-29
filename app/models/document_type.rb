@@ -16,7 +16,7 @@ class DocumentType < ActiveRecord::Base
     document_types
   end
 
-  def before_destroy
+  def self.before_destroy
     #raise _("area_destroy_fail_for_nodes") unless self.documents.empty?
     raise "can_not_deleted_for_data" unless self.documents.empty?
   end
